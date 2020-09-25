@@ -1,7 +1,7 @@
 {
-  "name": "typescript-template",
+  "name": "@arc/core",
   "version": "0.0.0",
-  "description": "Typescript Template Repository",
+  "description": "Javascript Game Engine",
   "scripts": {
     "build": "npm run transpile && npm run compile",
     "build:ci": "npm run build:clean && npm run transpile && npm run compile",
@@ -25,14 +25,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/AlboeDev/typescript-template.git"
+    "url": "git+ssh://git@github.com/AlboeDev/arc-core.git"
   },
   "author": "Alboe Development",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AlboeDev/typescript-template/issues"
+    "url": "https://github.com/AlboeDev/arc-core/issues"
   },
-  "homepage": "https://github.com/AlboeDev/typescript-template#readme",
+  "homepage": "https://github.com/AlboeDev/arc-core#readme",
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",

@@ -7,12 +7,12 @@ export default {
       format: 'umd',
       file: 'build/build.js',
       indent: '\t',
-      name: 'Build',
+      name: 'ArcCore',
     },
     {
       format: 'umd',
       file: 'build/build.min.js',
-      name: 'Build',
+      name: 'ArcCore',
       plugins: [
         terser(),
       ],
