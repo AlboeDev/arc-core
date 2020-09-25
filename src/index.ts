@@ -1,15 +1,7 @@
 /**
- * An example library for the typescript-template.
+ * Javascript Game Engine.
  *
  * @packageDocumentation
  */
 
-import {
-  methodA,
-  methodB,
-} from './example-utils';
-import Example from './example-class';
-
-export {
-  Example,
-};
+export default {};
