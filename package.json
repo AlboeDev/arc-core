@@ -18,7 +18,7 @@
     "docs:clean": "rimraf ./docs",
     "docs:extract": "api-extractor run -c ./api-extractor.json",
     "docs:generate": "api-documenter markdown -i ./docs/temp -o ./docs",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "transpile": "tsc",
     "transpile:clean": "rimraf ./dist",
     "transpile:watch": "tsc --watch"
@@ -42,6 +42,7 @@
     "@microsoft/api-documenter": "^7.8.56",
     "@microsoft/api-extractor": "^7.9.22",
     "@rollup/plugin-typescript": "^6.0.0",
+    "@types/jest": "^26.0.14",
     "@typescript-eslint/eslint-plugin": "^4.2.0",
     "@typescript-eslint/parser": "^4.2.0",
     "concurrently": "^5.3.0",

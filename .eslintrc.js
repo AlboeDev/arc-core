@@ -38,6 +38,7 @@ module.exports = {
       },
     ],
     'import/prefer-default-export': 0,
+    'jest/lowercase-name': 0,
     'jest/no-hooks': [
       'error',
       {
