@@ -99,6 +99,7 @@ module.exports = {
     'jsdoc/require-param-type': 0,
     'jsdoc/require-returns-type': 0,
     'jsdoc/valid-types': 1,
+    'max-classes-per-file': 0,
   },
   settings: {
     'import/parsers': {
