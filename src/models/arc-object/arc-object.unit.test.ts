@@ -1,4 +1,4 @@
-import ArcObject from './arc-object';
+import ArcObject from './arc-object.fixture';
 
 describe('ArcObject#unit', () => {
   let arcObject: ArcObject;
@@ -14,7 +14,7 @@ describe('ArcObject#unit', () => {
       expect(arcObject).toHaveProperty('id');
     });
 
-    it('should have a id property of type string', () => {
+    it('should have an id property of type string', () => {
       expect.assertions(1);
 
       expect(typeof arcObject.id).toBe('string');

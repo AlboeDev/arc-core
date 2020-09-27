@@ -8,7 +8,7 @@ import { uuid } from '../../utils/index';
  *
  * @internal
  */
-export default class ArcObject {
+export default abstract class ArcObject {
   protected uuid: string;
 
   /**
