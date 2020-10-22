@@ -8,6 +8,9 @@ import Component from '../component/component';
  * The root abstract component class.
  */
 export default class Entity extends ArcObject {
+  /**
+   * The Components that belong to this Entity.
+   */
   public components: Record<string, Component>;
 
   /**
