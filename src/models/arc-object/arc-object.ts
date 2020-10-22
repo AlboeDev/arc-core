@@ -9,7 +9,10 @@ import { uuid } from '../../utils/index';
  * @internal
  */
 export default abstract class ArcObject {
-  protected uuid: string;
+  /**
+   * The privately stored UUID for this ArcObject.
+   */
+  private uuid: string;
 
   /**
    * Construct a new ArcObject.
@@ -19,7 +22,7 @@ export default abstract class ArcObject {
   }
 
   /**
-   * The unique identifier for this instance.
+   * The unique identifier for this ArcObject.
    *
    * @returns - The unique identifier.
    */
