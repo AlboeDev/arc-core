@@ -7,6 +7,9 @@ import ArcObject from '../arc-object/arc-object';
  * The root entity class.
  */
 export default abstract class Component extends ArcObject {
+  /**
+   * The type of this Component.
+   */
   public readonly type: string;
 
   /**
