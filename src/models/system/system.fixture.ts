@@ -1,3 +1,4 @@
+import Entity from '../entity/entity';
 import System from './system';
 
 /**
@@ -8,4 +9,7 @@ import System from './system';
  *
  * @internal
  */
-export default class SystemFixture extends System {}
+export default class SystemFixture extends System {
+  // eslint-disable-next-line
+  public process(delta: number, entities: Array<Entity>): void {}
+}
