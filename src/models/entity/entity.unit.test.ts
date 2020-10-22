@@ -14,7 +14,7 @@ describe('Entity#unit', () => {
       expect(entity).toHaveProperty('components');
     });
 
-    it('shoudl have a components property of type object', () => {
+    it('should have a components property of type object', () => {
       expect.assertions(1);
 
       expect(typeof entity.components).toBe('object');
