@@ -4,4 +4,4 @@
  * @packageDocumentation
  */
 
-export default {};
+export * as models from './models/index';
