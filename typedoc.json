@@ -1,0 +1,10 @@
+{
+  "exclude": "**/*+(.fixture|.test).ts",
+  "excludeExternals": true,
+  "excludePrivate": true,
+  "inputFiles": ["./src"],
+  "mode": "file",
+  "out": "./docs/api",
+  "plugins": "typedoc-plugin-markdown",
+  "stripInternal": true
+}
