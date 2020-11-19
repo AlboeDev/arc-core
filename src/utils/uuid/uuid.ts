@@ -1,4 +1,7 @@
 /* eslint-disable no-bitwise, no-mixed-operators, prefer-template */
+/**
+ * @internal
+ */
 const lut: string[] = [];
 
 for (let i = 0; i < 256; i += 1) {
