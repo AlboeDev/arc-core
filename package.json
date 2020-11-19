@@ -6,7 +6,6 @@
     "build": "npm run transpile && npm run compile",
     "build:ci": "npm run build:clean && npm run transpile && npm run compile",
     "build:clean": "npm run transpile:clean && npm run compile:clean",
-    "build:watch": "npm run build && concurrently \"npm run transpile:watch\" \"npm run compile:watch\"",
     "ci": "npm run build:ci && npm run docs:ci",
     "clean": "npm run build:clean && npm run docs:clean",
     "compile": "rollup -c ./rollup.config.js",
