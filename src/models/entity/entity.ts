@@ -5,7 +5,7 @@ import Component from '../component/component';
  * Entity class.
  *
  * @remarks
- * The root abstract component class.
+ * The root class for containing components.
  */
 export default class Entity extends ArcObject {
   /**
