@@ -4,7 +4,7 @@ import ArcObject from '../arc-object/arc-object';
  * Component class.
  *
  * @remarks
- * The root entity class.
+ * The root class for containing data assigned to entities.
  */
 export default abstract class Component extends ArcObject {
   /**
