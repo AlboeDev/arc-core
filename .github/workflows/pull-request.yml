@@ -42,7 +42,8 @@ jobs:
       - name: Uncache dependencies
         uses: actions/cache@v2.1.4
         with:
-          restore-keys: node-modules
+          key: node-modules
+          path: node_modules/
 
       - name: Validate compilation
         run: npm run compile:validate
@@ -63,7 +64,8 @@ jobs:
       - name: Uncache dependencies
         uses: actions/cache@v2.1.4
         with:
-          restore-keys: node-modules
+          key: node-modules
+          path: node_modules/
           
       - name: Validate compilation
         run: npm test
@@ -84,7 +86,8 @@ jobs:
       - name: Uncache dependencies
         uses: actions/cache@v2.1.4
         with:
-          restore-keys: node-modules
+          key: node-modules
+          path: node_modules/
           
       - name: Validate compilation
         run: npm run lint
