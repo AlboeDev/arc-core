@@ -9,6 +9,7 @@
     "compile:clean": "rimraf ./dist",
     "compile:validate": "tsc --noemit",
     "lint": "eslint ./src/**/*.ts",
+    "lint:fix": "eslint ./src/**/*.ts --fix",
     "start": "echo no start script specified",
     "test": "jest"
   },
