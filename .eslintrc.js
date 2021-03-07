@@ -5,6 +5,7 @@ module.exports = {
   },
   extends: [
     'airbnb-base',
+    'plugin:jest/all',
     'plugin:import/typescript',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
@@ -33,6 +34,18 @@ module.exports = {
       },
     ],
     'import/prefer-default-export': 0,
+    'jest/lowercase-name': 0,
+    'jest/no-hooks': [
+      'error',
+      {
+        allow: [
+          'afterAll',
+          'afterEach',
+          'beforeAll',
+          'beforeEach',
+        ],
+      },
+    ],
   },
   settings: {
     'import/parsers': {

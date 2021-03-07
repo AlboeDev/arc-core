@@ -4,8 +4,13 @@
   "description": "Javascript Game Engine",
   "scripts": {
     "build": "esbuild ./src/index.ts --bundle --format=esm --minify --outfile=./build/build.js",
-    "start": "",
-    "test": ""
+    "build:clean": "rimraf ./build",
+    "compile": "tsc",
+    "compile:clean": "rimraf ./dist",
+    "compile:validate": "tsc --noemit",
+    "lint": "eslint ./src/**/*.ts",
+    "start": "echo no start script specified",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -18,16 +23,23 @@
   },
   "homepage": "https://github.com/AlboeDev/arc-core#readme",
   "devDependencies": {
+    "@babel/core": "^7.13.8",
+    "@babel/preset-env": "^7.13.9",
+    "@babel/preset-typescript": "^7.13.0",
     "@commitlint/cli": "^12.0.1",
     "@commitlint/config-conventional": "^12.0.1",
+    "@types/jest": "^26.0.20",
     "@typescript-eslint/eslint-plugin": "^4.16.1",
     "@typescript-eslint/parser": "^4.16.1",
     "esbuild": "^0.8.56",
     "eslint": "^7.21.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.8",
     "eslint-plugin-tsdoc": "^0.2.11",
     "husky": "^5.1.3",
+    "jest": "^26.6.3",
+    "rimraf": "^3.0.2",
     "typescript": "^4.2.3"
   },
   "dependencies": {}
