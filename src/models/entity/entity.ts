@@ -7,7 +7,7 @@ import Component from '../component/component';
  */
 export default class Entity {
   /**
-   * The type-indexed record of Components belonging to this Entity.
+   * The type-indexed record of Component instances belonging to this Entity.
    */
   public components: Record<string, Component>;
 
@@ -25,7 +25,7 @@ export default class Entity {
   }
 
   /**
-   * Mount an Array of Components to this Entity.
+   * Mount an Array of Component instances to this Entity.
    * @param components - Array of Components to mount to this Entity.
    * @returns - This Entity.
    */
@@ -46,7 +46,7 @@ export default class Entity {
   }
 
   /**
-   * Unmount an Array of Components from this Entity.
+   * Unmount an Array of Component instances from this Entity.
    * @param components - Array of Components to unmount from this Entity.
    * @returns - This Entity.
    */
