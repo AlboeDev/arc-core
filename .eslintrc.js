@@ -1,17 +1,13 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true,
-    'jest/globals': true,
     node: true,
   },
   extends: [
     'airbnb-base',
-    'plugin:jest/all',
     'plugin:import/typescript',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:jsdoc/recommended',
   ],
   ignorePatterns: [
     'build/**/*.*',
@@ -25,90 +21,27 @@ module.exports = {
   },
   plugins: [
     '@typescript-eslint',
-    'jest',
-    'jsdoc',
+    'eslint-plugin-tsdoc',
   ],
   rules: {
+    'class-methods-use-this': 0,
     'import/extensions': [
       'error',
       'ignorePackages',
       {
-        js: 'never',
         ts: 'never',
       },
     ],
     'import/prefer-default-export': 0,
-    'jest/lowercase-name': 0,
-    'jest/no-hooks': [
-      'error',
-      {
-        allow: [
-          'afterAll',
-          'afterEach',
-          'beforeAll',
-          'beforeEach',
-        ],
-      },
-    ],
-    'jsdoc/check-tag-names': [
-      1,
-      {
-        definedTags: [
-          'alpha',
-          'beta',
-          'defaultValue',
-          'deprecated',
-          'eventProperty',
-          'example',
-          'inheritDoc',
-          'internal',
-          'link',
-          'override',
-          'packageDocumentation',
-          'param',
-          'preapproved',
-          'preivateRemarks',
-          'public',
-          'readonly',
-          'remarks',
-          'returns',
-          'sealed',
-          'typeParam',
-          'virtual',
-        ],
-      },
-    ],
-    'jsdoc/no-types': 1,
-    'jsdoc/no-undefined-types': 0,
-    'jsdoc/require-description': 1,
-    'jsdoc/require-description-complete-sentence': 1,
-    'jsdoc/require-hyphen-before-param-description': 1,
-    'jsdoc/require-jsdoc': [
-      2,
-      {
-        require: {
-          ArrowFunctionExpression: true,
-          ClassDeclaration: true,
-          ClassExpression: true,
-          FunctionDeclaration: true,
-          FunctionExpression: true,
-          MethodDefinition: true,
-        },
-      },
-    ],
-    'jsdoc/require-param-type': 0,
-    'jsdoc/require-returns-type': 0,
-    'jsdoc/valid-types': 1,
-    'max-classes-per-file': 0,
   },
   settings: {
     'import/parsers': {
-      '@typescript-eslint/parser': ['.js', '.ts'],
+      '@typescript-eslint/parser': ['.ts'],
     },
     'import/resolver': {
       node: {
-        extensions: ['.js', '.ts'],
-        paths: ['src', 'test'],
+        extensions: ['.ts'],
+        paths: ['src'],
       },
     },
   },
