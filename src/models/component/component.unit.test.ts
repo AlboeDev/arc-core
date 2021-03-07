@@ -1,4 +1,4 @@
-import Component from './component.fixture';
+import Component from './component';
 
 describe('Component#unit', () => {
   let component: Component;
@@ -7,14 +7,28 @@ describe('Component#unit', () => {
     component = new Component();
   });
 
+  describe('#id', () => {
+    it('should have a \'id\' property', () => {
+      expect.assertions(1);
+
+      expect(component).toHaveProperty('id');
+    });
+
+    it('should have an \'id\' property of type \'string\'', () => {
+      expect.assertions(1);
+
+      expect(typeof component.id).toBe('string');
+    });
+  });
+
   describe('#type', () => {
-    it('should have a type property', () => {
+    it('should have a \'type\' property', () => {
       expect.assertions(1);
 
       expect(component).toHaveProperty('type');
     });
 
-    it('should have a type property of type string', () => {
+    it('should have a \'type\' property of type \'string\'', () => {
       expect.assertions(1);
 
       expect(typeof component.type).toBe('string');

@@ -1,122 +1,58 @@
-import ArcObject from '../arc-object/arc-object';
 import Component from '../component/component';
-import ComponentFixture from '../component/component.fixture';
 import Entity from './entity';
 
 describe('Entity#integration', () => {
+  let component: Component;
   let entity: Entity;
 
   beforeEach(() => {
+    component = new Component();
     entity = new Entity();
   });
 
-  describe('#constructor()', () => {
-    it('should extend ArcObject', () => {
+  describe('#mount()', () => {
+    it('should mount a Component', () => {
       expect.assertions(1);
 
-      expect(entity).toBeInstanceOf(ArcObject);
-    });
-  });
-
-  describe('#loadComponents()', () => {
-    it('should load a single component', () => {
-      expect.assertions(1);
-
-      const component = new ComponentFixture();
-
-      entity.loadComponents(component);
+      entity.mount(component);
 
       expect(entity.components[component.type]).toBe(component);
     });
 
-    it('should load multiple components', () => {
-      expect.assertions(2);
+    it('should not mount a Component type that already exists on the Entity', () => {
+      expect.assertions(1);
 
-      /**
-       * Instance component fixture class for additional testing.
-       *
-       * @internal
-       */
-      class ComponentFixture2 extends Component {}
+      const otherComponent = new Component();
 
-      const components = [
-        new ComponentFixture(),
-        new ComponentFixture2(),
-      ];
+      entity.mount(component);
+      entity.mount(otherComponent);
 
-      entity.loadComponents(...components);
-
-      expect(entity.components[components[0].type]).toBe(components[0]);
-      expect(entity.components[components[1].type]).toBe(components[1]);
-    });
-
-    it('should not load two of the same component', () => {
-      expect.assertions(2);
-
-      const components = [
-        new ComponentFixture(),
-        new ComponentFixture(),
-      ];
-
-      entity.loadComponents(...components);
-
-      expect(entity.components[components[0].type]).toBe(components[0]);
-      expect(Object.keys(entity.components)).toHaveLength(1);
+      expect(entity.components[otherComponent.type]).not.toBe(otherComponent);
     });
   });
 
-  describe('#unloadComponents()', () => {
-    let components: Array<Component>;
-
-    /**
-     * Instance component fixture class for additional testing.
-     *
-     * @internal
-     */
-    class ComponentFixture2 extends Component {}
-
+  describe('#unmount()', () => {
     beforeEach(() => {
-      components = [
-        new ComponentFixture(),
-        new ComponentFixture2(),
-      ];
-
-      entity.loadComponents(...components);
+      entity.mount(component);
     });
 
-    it('should unload a single component', () => {
-      expect.assertions(2);
+    it('should unmount a Component', () => {
+      expect.assertions(1);
 
-      entity.unloadComponents(components[0]);
+      entity.unmount(component);
 
-      expect(entity.components).not.toHaveProperty(components[0].type);
-      expect(entity.components).toHaveProperty(components[1].type);
+      expect(entity.components[component.type]).toBeUndefined();
     });
 
-    it('should unload multiple components', () => {
+    it('should not unmount a Component that does not exist on the Entity', () => {
       expect.assertions(2);
 
-      entity.unloadComponents(...components);
+      const otherComponent = new Component();
 
-      expect(entity.components).not.toHaveProperty(components[0].type);
-      expect(entity.components).not.toHaveProperty(components[1].type);
-    });
+      entity.unmount(otherComponent);
 
-    it('should not unload a component that hasn\'t been mounted', () => {
-      expect.assertions(2);
-
-      /**
-       * Instance component fixture class for additional testing.
-       *
-       * @internal
-       */
-      class ComponentFixture3 extends Component {}
-
-      expect(Object.keys(entity.components)).toHaveLength(2);
-
-      entity.unloadComponents(new ComponentFixture3());
-
-      expect(Object.keys(entity.components)).toHaveLength(2);
+      expect(entity.components[component.type]).toBe(component);
+      expect(entity.components[otherComponent.type]).not.toBe(otherComponent);
     });
   });
 });

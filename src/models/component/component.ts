@@ -1,12 +1,14 @@
-import ArcObject from '../arc-object/arc-object';
+import { uuid } from '../../utilities';
 
 /**
- * Component class.
- *
- * @remarks
- * The root class for containing data assigned to entities.
+ * The ECS Component class.
  */
-export default abstract class Component extends ArcObject {
+export default class Component {
+  /**
+   * The ID of this Component.
+   */
+  public readonly id: string;
+
   /**
    * The type of this Component.
    */
@@ -16,8 +18,7 @@ export default abstract class Component extends ArcObject {
    * Construct a new Component.
    */
   public constructor() {
-    super();
-
+    this.id = uuid();
     this.type = this.constructor.name;
   }
 }

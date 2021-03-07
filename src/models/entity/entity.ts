@@ -1,39 +1,44 @@
-import ArcObject from '../arc-object/arc-object';
+import { uuid } from '../../utilities';
+
 import Component from '../component/component';
 
 /**
- * Entity class.
- *
- * @remarks
- * The root class for containing components.
+ * The ECS Entity class.
  */
-export default class Entity extends ArcObject {
+export default class Entity {
   /**
-   * The Components that belong to this Entity.
+   * The type-indexed record of Components belonging to this Entity.
    */
   public components: Record<string, Component>;
+
+  /**
+   * The ID of this Entity.
+   */
+  public readonly id: string;
 
   /**
    * Construct a new Entity.
    */
   public constructor() {
-    super();
-
     this.components = {};
+    this.id = uuid();
   }
 
   /**
-   * Load Components into this Entity.
-   *
-   * @param components - Components to attempt to load.
-   * @returns - This Entity instance.
+   * Mount an Array of Components to this Entity.
+   * @param components - Array of Components to mount to this Entity.
+   * @returns - This Entity.
    */
-  public loadComponents(...components: Array<Component>): this {
+  public mount(...components: Array<Component>): this {
     components.forEach(
       (component: Component): void => {
-        if (!this.components[component.type]) {
-          this.components[component.type] = component;
+        if (this.components[component.type]) {
+          // TODO - Perform logging.
+
+          return;
         }
+
+        this.components[component.type] = component;
       },
     );
 
@@ -41,17 +46,20 @@ export default class Entity extends ArcObject {
   }
 
   /**
-   * Unload Components from this Entity.
-   *
-   * @param components - Components to attempt to unload.
-   * @returns - This Entity instance.
+   * Unmount an Array of Components from this Entity.
+   * @param components - Array of Components to unmount from this Entity.
+   * @returns - This Entity.
    */
-  public unloadComponents(...components: Array<Component | string>): this {
+  public unmount(...components: Array<Component>): this {
     components.forEach(
       (component: Component): void => {
-        if (this.components[component.type] === component) {
-          delete this.components[component.type];
+        if (this.components[component.type] !== component) {
+          // TODO - Perform Logging
+
+          return;
         }
+
+        delete this.components[component.type];
       },
     );
 

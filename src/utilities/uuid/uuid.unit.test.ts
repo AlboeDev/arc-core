@@ -1,6 +1,6 @@
 import uuid from './uuid';
 
-describe('uuid#unit', () => {
+describe('uuid()#unit', () => {
   it('should generate a string', () => {
     expect.assertions(1);
 
