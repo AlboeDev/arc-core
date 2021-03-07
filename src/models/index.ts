@@ -1,1 +1,2 @@
-export { default as ArcObject } from './arc-object/arc-object';
+export { default as Component } from './component/component';
+export { default as Entity } from './entity/entity';
