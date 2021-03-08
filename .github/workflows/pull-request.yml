@@ -67,7 +67,7 @@ jobs:
           key: node-modules
           path: node_modules/
           
-      - name: Validate compilation
+      - name: Test changes
         run: npm test
         
   lint:
@@ -89,5 +89,5 @@ jobs:
           key: node-modules
           path: node_modules/
           
-      - name: Validate compilation
+      - name: Lint changes
         run: npm run lint
