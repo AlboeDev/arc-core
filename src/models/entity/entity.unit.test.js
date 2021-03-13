@@ -1,7 +1,7 @@
 import Entity from './entity';
 
 describe('Entity#unit', () => {
-  let entity: Entity;
+  let entity;
 
   beforeEach(() => {
     entity = new Entity();

@@ -2,15 +2,15 @@ import Component from '../component/component';
 import Entity from './entity';
 
 describe('Entity#integration', () => {
-  let component: Component;
-  let entity: Entity;
+  let component;
+  let entity;
 
   beforeEach(() => {
     component = new Component();
     entity = new Entity();
   });
 
-  describe('#mount()', () => {
+  describe('mount()', () => {
     it('should mount a Component', () => {
       expect.assertions(1);
 
@@ -31,7 +31,7 @@ describe('Entity#integration', () => {
     });
   });
 
-  describe('#unmount()', () => {
+  describe('unmount()', () => {
     beforeEach(() => {
       entity.mount(component);
     });
