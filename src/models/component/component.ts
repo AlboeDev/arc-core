@@ -3,7 +3,7 @@ import { uuid } from '../../utilities';
 /**
  * The ECS Component class.
  */
-export default class Component {
+export default abstract class Component {
   /**
    * The ID of this Component.
    */

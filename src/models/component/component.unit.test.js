@@ -1,7 +1,7 @@
 import Component from './component';
 
 describe('Component#unit', () => {
-  let component: Component;
+  let component;
 
   beforeEach(() => {
     component = new Component();

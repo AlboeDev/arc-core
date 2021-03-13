@@ -2,9 +2,9 @@ import Entity from '../entity/entity';
 import Scene from './scene';
 
 describe('Scene#integration', () => {
-  let entity1: Entity;
-  let entity2: Entity;
-  let scene: Scene;
+  let entity1;
+  let entity2;
+  let scene;
 
   beforeEach(() => {
     entity1 = new Entity();
@@ -12,7 +12,7 @@ describe('Scene#integration', () => {
     scene = new Scene();
   });
 
-  describe('#mount()', () => {
+  describe('mount()', () => {
     it('should mount an Entity', () => {
       expect.assertions(1);
 
@@ -31,7 +31,7 @@ describe('Scene#integration', () => {
     });
   });
 
-  describe('#unmount()', () => {
+  describe('unmount()', () => {
     beforeEach(() => {
       scene.mount(entity1, entity2);
     });

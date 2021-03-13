@@ -1,13 +1,13 @@
 import Scene from './scene';
 
 describe('Scene#unit', () => {
-  let scene: Scene;
+  let scene;
 
   beforeEach(() => {
     scene = new Scene();
   });
 
-  describe('#entities', () => {
+  describe('entities', () => {
     it('should have an \'entities\' property', () => {
       expect.assertions(1);
 
